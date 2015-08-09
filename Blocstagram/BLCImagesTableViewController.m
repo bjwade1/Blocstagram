@@ -11,6 +11,7 @@
 #import "BLCMedia.h"
 #import "BLCUser.h"
 #import "BLCComment.h"
+#import "BLCMediaTableViewCell.h"
 
 @interface BLCImagesTableViewController ()
 
@@ -30,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"imageCell"];
+    [self.tableView registerClass:[BLCMediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,27 +48,11 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    static NSInteger imageViewTag = 1234;
-    UIImageView *imageView = (UIImageView*)[cell.contentView viewWithTag:imageViewTag];
+    BLCMediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
     
-    if (!imageView) {
-        //New cell, so no image yet
-        imageView = [[UIImageView alloc] init];
-        imageView.contentMode = UIViewContentModeScaleToFill;
-        
-        imageView.frame = cell.contentView.bounds;
-        imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        
-        imageView.tag = imageViewTag;
-        [cell.contentView addSubview:imageView];
-    }
-    
-    BLCMedia *item = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
-    imageView.image = item.image;
-    
+    cell.mediaItem = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
+
     return cell;
 }
 
@@ -76,7 +61,7 @@
     BLCMedia *item = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
     UIImage *image = item.image;
     
-    return (CGRectGetWidth(self.view.frame) / image.size.width) * image.size.height;
+    return 300 + (image.size.height / image.size.width * CGRectGetWidth(self.view.frame));
 }
 
 
@@ -101,6 +86,13 @@
 
 }
 
+
+- (void) setEditing:(BOOL)editing animated:(BOOL)animated {
+    
+    [super setEditing:editing animated:animated];
+    
+    [self.tableView setEditing:editing animated:YES];
+}
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {

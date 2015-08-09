@@ -28,6 +28,7 @@
 		0A0446881B7404CC00865951 /* BLCMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0446871B7404CC00865951 /* BLCMedia.m */; };
 		0A04468B1B74065900865951 /* BLCComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A04468A1B74065900865951 /* BLCComment.m */; };
 		0A0446911B74078600865951 /* BLCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0446901B74078600865951 /* BLCDataSource.m */; };
+		0A0446971B746BFC00865951 /* BLCMediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0446961B746BFC00865951 /* BLCMediaTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		0A04468A1B74065900865951 /* BLCComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCComment.m; path = ../BLCComment.m; sourceTree = "<group>"; };
 		0A04468F1B74078600865951 /* BLCDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCDataSource.h; path = ../BLCDataSource.h; sourceTree = "<group>"; };
 		0A0446901B74078600865951 /* BLCDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCDataSource.m; path = ../BLCDataSource.m; sourceTree = "<group>"; };
+		0A0446951B746BFC00865951 /* BLCMediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCMediaTableViewCell.h; path = ../BLCMediaTableViewCell.h; sourceTree = "<group>"; };
+		0A0446961B746BFC00865951 /* BLCMediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCMediaTableViewCell.m; path = ../BLCMediaTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				0A04468A1B74065900865951 /* BLCComment.m */,
 				0A04468F1B74078600865951 /* BLCDataSource.h */,
 				0A0446901B74078600865951 /* BLCDataSource.m */,
+				0A0446951B746BFC00865951 /* BLCMediaTableViewCell.h */,
+				0A0446961B746BFC00865951 /* BLCMediaTableViewCell.m */,
 				0A04464E1B6A882F00865951 /* Images.xcassets */,
 				0A0446501B6A882F00865951 /* LaunchScreen.xib */,
 				0A0446411B6A882F00865951 /* Supporting Files */,
@@ -290,6 +295,7 @@
 			files = (
 				0A04464A1B6A882F00865951 /* ViewController.m in Sources */,
 				0A0446471B6A882F00865951 /* AppDelegate.m in Sources */,
+				0A0446971B746BFC00865951 /* BLCMediaTableViewCell.m in Sources */,
 				0A0446881B7404CC00865951 /* BLCMedia.m in Sources */,
 				0A0446441B6A882F00865951 /* main.m in Sources */,
 				0A0446821B6AF6CB00865951 /* BLCImagesTableViewController.m in Sources */,
