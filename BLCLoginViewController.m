@@ -19,8 +19,8 @@
 
 NSString *const BLCLoginViewControllerDidGetAccessTokenNotification = @"BLCLoginViewControllerDidGetAccessTokenNotification";
 
-- (NSString *) redirectURL {
-    return @"www.bloc.io";
+- (NSString *) redirectURI {
+    return @"http://www.bloc.io";
 }
 
 - (void) loadView {
@@ -40,7 +40,7 @@ NSString *const BLCLoginViewControllerDidGetAccessTokenNotification = @"BLCLogin
     self.navigationItem.leftBarButtonItem = backButton;
     // Do any additional setup after loading the view.
     
-    NSString *urlString = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token", [BLCDataSource instagramClientID], [self redirectURL]];
+    NSString *urlString = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token", [BLCDataSource instagramClientID], [self redirectURI]];
     NSURL *url = [NSURL URLWithString:urlString];
     
     if (url) {
@@ -70,7 +70,7 @@ NSString *const BLCLoginViewControllerDidGetAccessTokenNotification = @"BLCLogin
    
     NSString *urlString = request.URL.absoluteString;
     
-    if ([urlString hasPrefix:[self redirectURL]]) {
+    if ([urlString hasPrefix:[self redirectURI]]) {
         
         // This contains our auth token
         NSRange rangeOfAccessTokenParameter = [urlString rangeOfString:@"access_token="];
