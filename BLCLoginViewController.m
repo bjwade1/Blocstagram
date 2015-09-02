@@ -8,8 +8,12 @@
 
 #import "BLCLoginViewController.h"
 #import "BLCDataSource.h"
+#import "BLCMedia.h"
+#import "BLCShare.h"
 
 @interface BLCLoginViewController () <UIWebViewDelegate>
+
+@property (nonatomic, strong) BLCMedia *media;
 
 @property (nonatomic, weak) UIWebView *webView;
 
@@ -35,9 +39,14 @@ NSString *const BLCLoginViewControllerDidGetAccessTokenNotification = @"BLCLogin
     [super viewDidLoad];
     self.title = @"Login";
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self.webView action:@selector(canGoBack)];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self.view action:@selector(canGoBack)];
     
     self.navigationItem.leftBarButtonItem = backButton;
+    
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStyleDone target:self.view action:@selector(shareButtonPressed)];
+    
+    self.navigationItem.rightBarButtonItem = shareButton;
+
     // Do any additional setup after loading the view.
     
     NSString *urlString = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token", [BLCDataSource instagramClientID], [self redirectURI]];
@@ -90,6 +99,12 @@ NSString *const BLCLoginViewControllerDidGetAccessTokenNotification = @"BLCLogin
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) shareButtonPressed {
+    
+    
+    [BLCShare share:self withCaption: _media.caption withImage:_media.image];
 }
 
 
