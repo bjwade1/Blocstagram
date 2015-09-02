@@ -38,14 +38,6 @@ NSString *const BLCLoginViewControllerDidGetAccessTokenNotification = @"BLCLogin
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Login";
-    
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self.view action:@selector(canGoBack)];
-    
-    self.navigationItem.leftBarButtonItem = backButton;
-    
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStyleDone target:self.view action:@selector(shareButtonPressed)];
-    
-    self.navigationItem.rightBarButtonItem = shareButton;
 
     // Do any additional setup after loading the view.
     
@@ -101,11 +93,7 @@ NSString *const BLCLoginViewControllerDidGetAccessTokenNotification = @"BLCLogin
     // Dispose of any resources that can be recreated.
 }
 
-- (void) shareButtonPressed {
-    
-    
-    [BLCShare share:self withCaption: _media.caption withImage:_media.image];
-}
+
 
 
 
