@@ -46,7 +46,9 @@
     
     [self.tableView registerClass:[BLCMediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
     
-
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self.view action:@selector(shareButtonPressed)];
+    
+    self.navigationItem.rightBarButtonItem = shareButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -256,6 +258,10 @@
     }
 }
 
+- (void) cellDidPressLikeButton:(BLCMediaTableViewCell *)cell {
+    [[BLCDataSource sharedInstance] toggleLikeOnMediaItem:cell.mediaItem];
+}
+
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
@@ -274,6 +280,10 @@
     return animator;
 }
 
+/**- (void) shareButtonPressed {
+    
+    [BLCShare share:self withCaption: self.media.caption withImage:self.media.image];
+}**/
 
 /*
 // Override to support rearranging the table view.

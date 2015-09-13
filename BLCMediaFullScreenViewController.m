@@ -55,14 +55,7 @@
     
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
-    
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self.view action:@selector(canGoBack)];
-    
-    self.navigationItem.leftBarButtonItem = backButton;
-    
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStyleDone target:self.view action:@selector(shareButtonPressed)];
-    
-    self.navigationItem.rightBarButtonItem = shareButton;
+
 
 }
 
@@ -146,10 +139,7 @@
     }
 }
 
-- (void) shareButtonPressed {
-    
-    [BLCShare share:self withCaption: self.media.caption withImage:self.media.image];
-}
+
 /*
 #pragma mark - Navigation
 
