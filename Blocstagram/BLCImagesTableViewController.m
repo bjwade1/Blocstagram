@@ -20,6 +20,9 @@
 
 @property (nonatomic, weak) UIImageView *lastTappedImageView;
 
+@property (nonatomic) CGFloat decelerationRate;
+@property (nonatomic, readonly, getter=isDragging) BOOL isDragging;
+
 @end
 
 @implementation BLCImagesTableViewController
@@ -43,7 +46,9 @@
     
     [self.tableView registerClass:[BLCMediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
     
-
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithTitle:@"Share" style:UIBarButtonItemStylePlain target:self.view action:@selector(shareButtonPressed)];
+    
+    self.navigationItem.rightBarButtonItem = shareButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,6 +71,16 @@
     cell.mediaItem = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
 
     return cell;
+}
+
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    BLCMedia *mediaItem = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
+    
+    if (mediaItem.downloadState == BLCMediaDownloadStateNeedsImage) {
+        
+        [[BLCDataSource sharedInstance] downloadImageForMediaItem:mediaItem];
+    }
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -161,6 +176,8 @@
     }
 }
 
+#pragma mark - Pull to Refresh and infinite scroll
+
 - (void) refreshControlDidFire:(UIRefreshControl *) sender {
     [[BLCDataSource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
         [sender endRefreshing];
@@ -172,7 +189,9 @@
     NSIndexPath *bottomIndexPath = [[self.tableView indexPathsForVisibleRows] lastObject];
     
     if (bottomIndexPath && bottomIndexPath.row == [BLCDataSource sharedInstance].mediaItems.count - 1) {
+       
         // The very last cell is on screen
+        
         [[BLCDataSource sharedInstance] requestOldItemsWithCompletionHandler:nil];
     }
 }
@@ -188,15 +207,24 @@
 
 #pragma mark - UIScrollViewDelegate
 
-/**- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+- (void) scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    
+    NSLog(@"Deceleration: %f", scrollView.decelerationRate);
+
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    //If the user is scrolling, but not too fast, infiniteScrollIfNecessary will be called
+    if (scrollView.dragging == YES && scrollView.decelerationRate != UIScrollViewDecelerationRateFast) {
     [self infiniteScrollIfNecessary];
-}**/
+    }
+}
 
 
 // Reduce the number of times that infiniteScrollIfNecessary is called by only calling it when scrolling stops.
-- (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+/**- (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     [self infiniteScrollIfNecessary];
-}
+}**/
 
 
 #pragma mark - BLCMediaTableViewCellDelegate
@@ -230,6 +258,10 @@
     }
 }
 
+- (void) cellDidPressLikeButton:(BLCMediaTableViewCell *)cell {
+    [[BLCDataSource sharedInstance] toggleLikeOnMediaItem:cell.mediaItem];
+}
+
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
@@ -248,6 +280,10 @@
     return animator;
 }
 
+/**- (void) shareButtonPressed {
+    
+    [BLCShare share:self withCaption: self.media.caption withImage:self.media.image];
+}**/
 
 /*
 // Override to support rearranging the table view.

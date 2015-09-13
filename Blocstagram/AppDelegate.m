@@ -26,7 +26,8 @@
     
     UINavigationController *navVC = [[UINavigationController alloc] init];
     
-    if (![BLCDataSource sharedInstance].accessToken) {
+   // if (![BLCDataSource sharedInstance].accessToken) {
+    if (true) {
     
     BLCLoginViewController *loginVC = [[BLCLoginViewController alloc] init];
     [navVC setViewControllers:@[loginVC] animated:YES];
