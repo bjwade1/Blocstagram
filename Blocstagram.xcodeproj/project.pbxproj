@@ -34,6 +34,7 @@
 		0A2CE4921B915AB7002CF718 /* BLCMediaFullScreenAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2CE4911B915AB7002CF718 /* BLCMediaFullScreenAnimator.m */; };
 		0A5F4CD91B9FC78F00B475D4 /* BLCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F4CD81B9FC78F00B475D4 /* BLCLikeButton.m */; };
 		0A920ABA1B9CB8F5002E85DE /* BLCCircleSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A920AB91B9CB8F5002E85DE /* BLCCircleSpinner.m */; };
+		0AD4145D1BA8C560007403D3 /* BLCComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4145C1BA8C560007403D3 /* BLCComposeCommentView.m */; };
 		0AE364031B9665C500BABD92 /* BLCShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE364021B9665C500BABD92 /* BLCShare.m */; };
 		9A04E5BB31F156470159B06E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FAC9869F976E1239DEB100 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,8 @@
 		0A5F4CD81B9FC78F00B475D4 /* BLCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCLikeButton.m; sourceTree = "<group>"; };
 		0A920AB81B9CB8F5002E85DE /* BLCCircleSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCCircleSpinner.h; sourceTree = "<group>"; };
 		0A920AB91B9CB8F5002E85DE /* BLCCircleSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCCircleSpinner.m; sourceTree = "<group>"; };
+		0AD4145B1BA8C560007403D3 /* BLCComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCComposeCommentView.h; path = ../BLCComposeCommentView.h; sourceTree = "<group>"; };
+		0AD4145C1BA8C560007403D3 /* BLCComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCComposeCommentView.m; path = ../BLCComposeCommentView.m; sourceTree = "<group>"; };
 		0AE364011B9665C500BABD92 /* BLCShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCShare.h; path = ../BLCShare.h; sourceTree = "<group>"; };
 		0AE364021B9665C500BABD92 /* BLCShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCShare.m; path = ../BLCShare.m; sourceTree = "<group>"; };
 		0DDCFF9ABDF3271BA12359AC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				0A920AB91B9CB8F5002E85DE /* BLCCircleSpinner.m */,
 				0A0446891B74065900865951 /* BLCComment.h */,
 				0A04468A1B74065900865951 /* BLCComment.m */,
+				0AD4145B1BA8C560007403D3 /* BLCComposeCommentView.h */,
+				0AD4145C1BA8C560007403D3 /* BLCComposeCommentView.m */,
 				0A04468F1B74078600865951 /* BLCDataSource.h */,
 				0A0446901B74078600865951 /* BLCDataSource.m */,
 				0A0446801B6AF6CB00865951 /* BLCImagesTableViewController.h */,
@@ -389,6 +394,7 @@
 				0A0446881B7404CC00865951 /* BLCMedia.m in Sources */,
 				0A0446441B6A882F00865951 /* main.m in Sources */,
 				0A2CE4921B915AB7002CF718 /* BLCMediaFullScreenAnimator.m in Sources */,
+				0AD4145D1BA8C560007403D3 /* BLCComposeCommentView.m in Sources */,
 				0A920ABA1B9CB8F5002E85DE /* BLCCircleSpinner.m in Sources */,
 				0A0446821B6AF6CB00865951 /* BLCImagesTableViewController.m in Sources */,
 				0A0446851B7310B700865951 /* BLCUser.m in Sources */,
