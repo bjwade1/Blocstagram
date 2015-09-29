@@ -115,6 +115,7 @@
 		0AA1FF151BB2685B007074D3 /* UIImage+BLCImageUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BLCImageUtilities.m"; sourceTree = "<group>"; };
 		0AB930161BB7979500044A74 /* BLCPostToInstaramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCPostToInstaramViewController.h; sourceTree = "<group>"; };
 		0AB930171BB7979500044A74 /* BLCPostToInstaramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCPostToInstaramViewController.m; sourceTree = "<group>"; };
+		0AB9301A1BB866E300044A74 /* Definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
 		0AD4145B1BA8C560007403D3 /* BLCComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCComposeCommentView.h; path = ../BLCComposeCommentView.h; sourceTree = "<group>"; };
 		0AD4145C1BA8C560007403D3 /* BLCComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCComposeCommentView.m; path = ../BLCComposeCommentView.m; sourceTree = "<group>"; };
 		0AE364011B9665C500BABD92 /* BLCShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCShare.h; path = ../BLCShare.h; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 		0A0446351B6A882F00865951 = {
 			isa = PBXGroup;
 			children = (
+				0AB9301A1BB866E300044A74 /* Definitions.h */,
 				0A0446401B6A882F00865951 /* Blocstagram */,
 				0A04465A1B6A882F00865951 /* BlocstagramTests */,
 				0A04463F1B6A882F00865951 /* Products */,

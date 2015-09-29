@@ -76,6 +76,7 @@
             self.userInteractionEnabled = YES;
     }
     
+    UIImage *image = [UIImage imageNamed:imageName];
     [self setImage: [UIImage imageNamed:imageName] forState:UIControlStateNormal];
 }
 
