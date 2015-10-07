@@ -41,6 +41,14 @@
 		0AA1FF131BB229A3007074D3 /* BLCCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1FF121BB229A3007074D3 /* BLCCameraViewController.m */; };
 		0AA1FF161BB2685B007074D3 /* UIImage+BLCImageUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1FF151BB2685B007074D3 /* UIImage+BLCImageUtilities.m */; };
 		0AB930181BB7979500044A74 /* BLCPostToInstaramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB930171BB7979500044A74 /* BLCPostToInstaramViewController.m */; };
+		0AC531E21BC496D300B9274E /* BLCUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC531E11BC496D300B9274E /* BLCUserTests.m */; settings = {ASSET_TAGS = (); }; };
+		0AC531E31BC4971E00B9274E /* BLCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0446841B7310B700865951 /* BLCUser.m */; settings = {ASSET_TAGS = (); }; };
+		0AC531E51BC4A82500B9274E /* BLCCommentTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC531E41BC4A82500B9274E /* BLCCommentTest.m */; settings = {ASSET_TAGS = (); }; };
+		0AC531E61BC4A83000B9274E /* BLCComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A04468A1B74065900865951 /* BLCComment.m */; settings = {ASSET_TAGS = (); }; };
+		0AC531E81BC4A9D600B9274E /* BLCMediaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC531E71BC4A9D600B9274E /* BLCMediaTest.m */; settings = {ASSET_TAGS = (); }; };
+		0AC531E91BC4A9F400B9274E /* BLCMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0446871B7404CC00865951 /* BLCMedia.m */; settings = {ASSET_TAGS = (); }; };
+		0AC531EB1BC4AB1800B9274E /* BLCMediaTableViewCellTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC531EA1BC4AB1800B9274E /* BLCMediaTableViewCellTest.m */; settings = {ASSET_TAGS = (); }; };
+		0AC531EC1BC4AB4400B9274E /* BLCMediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0446961B746BFC00865951 /* BLCMediaTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		0AD4145D1BA8C560007403D3 /* BLCComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4145C1BA8C560007403D3 /* BLCComposeCommentView.m */; };
 		0AE364031B9665C500BABD92 /* BLCShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE364021B9665C500BABD92 /* BLCShare.m */; };
 		9A04E5BB31F156470159B06E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FAC9869F976E1239DEB100 /* libPods.a */; };
@@ -116,6 +124,10 @@
 		0AB930161BB7979500044A74 /* BLCPostToInstaramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCPostToInstaramViewController.h; sourceTree = "<group>"; };
 		0AB930171BB7979500044A74 /* BLCPostToInstaramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCPostToInstaramViewController.m; sourceTree = "<group>"; };
 		0AB9301A1BB866E300044A74 /* Definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
+		0AC531E11BC496D300B9274E /* BLCUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCUserTests.m; sourceTree = "<group>"; };
+		0AC531E41BC4A82500B9274E /* BLCCommentTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCCommentTest.m; sourceTree = "<group>"; };
+		0AC531E71BC4A9D600B9274E /* BLCMediaTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMediaTest.m; sourceTree = "<group>"; };
+		0AC531EA1BC4AB1800B9274E /* BLCMediaTableViewCellTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMediaTableViewCellTest.m; sourceTree = "<group>"; };
 		0AD4145B1BA8C560007403D3 /* BLCComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCComposeCommentView.h; path = ../BLCComposeCommentView.h; sourceTree = "<group>"; };
 		0AD4145C1BA8C560007403D3 /* BLCComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCComposeCommentView.m; path = ../BLCComposeCommentView.m; sourceTree = "<group>"; };
 		0AE364011B9665C500BABD92 /* BLCShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCShare.h; path = ../BLCShare.h; sourceTree = "<group>"; };
@@ -241,6 +253,10 @@
 		0A04465A1B6A882F00865951 /* BlocstagramTests */ = {
 			isa = PBXGroup;
 			children = (
+				0AC531E11BC496D300B9274E /* BLCUserTests.m */,
+				0AC531E71BC4A9D600B9274E /* BLCMediaTest.m */,
+				0AC531EA1BC4AB1800B9274E /* BLCMediaTableViewCellTest.m */,
+				0AC531E41BC4A82500B9274E /* BLCCommentTest.m */,
 				0A04465D1B6A882F00865951 /* BlocstagramTests.m */,
 				0A04465B1B6A882F00865951 /* Supporting Files */,
 			);
@@ -454,7 +470,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC531E21BC496D300B9274E /* BLCUserTests.m in Sources */,
+				0AC531E91BC4A9F400B9274E /* BLCMedia.m in Sources */,
+				0AC531EC1BC4AB4400B9274E /* BLCMediaTableViewCell.m in Sources */,
+				0AC531EB1BC4AB1800B9274E /* BLCMediaTableViewCellTest.m in Sources */,
+				0AC531E31BC4971E00B9274E /* BLCUser.m in Sources */,
+				0AC531E81BC4A9D600B9274E /* BLCMediaTest.m in Sources */,
 				0A04465E1B6A882F00865951 /* BlocstagramTests.m in Sources */,
+				0AC531E51BC4A82500B9274E /* BLCCommentTest.m in Sources */,
+				0AC531E61BC4A83000B9274E /* BLCComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
